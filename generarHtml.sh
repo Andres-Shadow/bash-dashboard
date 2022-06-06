@@ -29,5 +29,9 @@ echo "
 		<div id='p4Chart' style="'"height: 500px; width: 500px;"'">
 			
 		</div>
+		
+		<div id='p5Chart' style="'"height: 500px; width: 500px;"'">
+			
+		</div>
 </body>
 </html>" >>index.html

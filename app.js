@@ -5,6 +5,7 @@ function drawCharts(){
 	drawChartP2();
 	drawChartP3();
 	drawChartP4();
+	drawChartP5();
 	
 }
 	function drawChartP1() {
@@ -12,27 +13,27 @@ function drawCharts(){
 	['dispositivo','espcio usado'],
 ['udev',0],
 ['tmpfs',1488],
-['/dev/sda4',18811432],
-['tmpfs',432],
+['/dev/sda4',18854924],
+['tmpfs',45428],
 ['tmpfs',4],
 ['tmpfs',0],
 ['/dev/loop0',128],
-['/dev/loop1',113280],
-['/dev/loop4',56960],
-['/dev/loop2',114432],
+['/dev/loop3',114432],
 ['/dev/loop5',56960],
-['/dev/loop6',63488],
+['/dev/loop4',56960],
+['/dev/loop2',113280],
 ['/dev/loop7',63488],
-['/dev/loop3',59008],
+['/dev/loop1',59008],
 ['/dev/loop8',84992],
-['/dev/loop9',84992],
 ['/dev/loop10',168832],
+['/dev/loop9',84992],
+['/dev/loop12',260224],
 ['/dev/loop11',66816],
-['/dev/loop12',83328],
+['/dev/loop13',83328],
 ['/dev/loop14',128],
-['/dev/loop13',260224],
 ['/dev/sda1',5500],
-['tmpfs',48],
+['tmpfs',20],
+['/dev/loop15',63488],
 ]);
 
 var options = {
@@ -55,8 +56,8 @@ var chart = new google.visualization.PieChart(document.getElementById('p2Chart')
 function drawChartP3() {
 	var data = google.visualization.arrayToDataTable([
 		  ['Usado', 'Libre'],
-['usado ', 1173724],
-['libre ', 1050092],
+['usado ', 1242816],
+['libre ', 657256],
 ]);
 
 var options = {
@@ -77,4 +78,21 @@ var options = {
 };
 
 var chart = new google.visualization.PieChart(document.getElementById('p4Chart'));
+	chart.draw(data,options); }
+function drawChartP4() {
+	var data = google.visualization.arrayToDataTable([
+		  ['Usuario', 'Usado'],
+['andres', 4214480 ],
+['julio', 64 ],
+['luis', 64 ],
+['mayler', 84 ],
+['pedro', 64 ],
+['usuario1', 4 ],
+]);
+
+var options = {
+	title: 'Espacio en disco usado'
+};
+
+var chart = new google.visualization.PieChart(document.getElementById('p5Chart'));
 	chart.draw(data,options); }

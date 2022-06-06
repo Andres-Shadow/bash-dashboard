@@ -11,6 +11,7 @@ function drawCharts(){
 	drawChartP2();
 	drawChartP3();
 	drawChartP4();
+	drawChartP5();
 	
 }
 	function drawChartP1() {
@@ -75,4 +76,23 @@ var options = {
 var chart = new google.visualization.PieChart(document.getElementById('p4Chart'));
 	chart.draw(data,options); }" >>app.js			  
 
+echo "function drawChartP4() {
+	var data = google.visualization.arrayToDataTable([
+		  ['Usuario', 'Usado'],"  >> app.js
+		  
+for U in $(ls /home)
+do
+	DISCO=$( sudo du -s /home/$U 2>/dev/null | cut -d'/' -f1)
+	echo "['"$U"', "$DISCO"],">>app.js
+
+done
+
+echo "]);
+
+var options = {
+	title: 'Espacio en disco usado'
+};
+
+var chart = new google.visualization.PieChart(document.getElementById('p5Chart'));
+	chart.draw(data,options); }" >>app.js	
 	
