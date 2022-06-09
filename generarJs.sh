@@ -112,9 +112,6 @@ echo "function drawChartP6() {
      var data = google.visualization.arrayToDataTable([
           ['etiqueta', 'valor']," >>app.js
           
-#INSTRUCCIONES
-
-#top -n 1 | head -3 | tail -1 | cut -d " " -f1,2 | sed s/,/./g | awk {'print "['\'' 'cpu''\'', " $2 "],"'} 
 top -n 1 | head -3 | tail -1  | sed s/,/./g | awk {'print "['\'' 'cpu-usuario''\'', " $2 "],"'} >>app.js
 top -n 1 | head -3 | tail -1  | sed s/,/./g | awk {'print "['\'' 'cpu-sistema''\'', " $4 "],"'} >>app.js
 top -n 1 | head -3 | tail -1  | sed s/,/./g | awk {'print "['\'' 'cpu-libre''\'', " $8 "],"'} >>app.js
