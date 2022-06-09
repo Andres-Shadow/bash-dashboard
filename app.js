@@ -14,8 +14,8 @@ function drawCharts(){
 	['dispositivo','espcio usado'],
 ['udev',0],
 ['tmpfs',1480],
-['/dev/sda4',18928176],
-['tmpfs',100428],
+['/dev/sda4',18947448],
+['tmpfs',173200],
 ['tmpfs',4],
 ['tmpfs',0],
 ['/dev/loop0',128],
@@ -34,7 +34,7 @@ function drawCharts(){
 ['/dev/loop13',260224],
 ['/dev/loop14',128],
 ['/dev/sda1',5500],
-['tmpfs',20],
+['tmpfs',24],
 ]);
 
 var options = {
@@ -57,8 +57,8 @@ var chart = new google.visualization.PieChart(document.getElementById('p2Chart')
 function drawChartP3() {
 	var data = google.visualization.arrayToDataTable([
 		  ['Usado', 'Libre'],
-['usado ', 1554588],
-['libre ', 355760],
+['usado ', 1739756],
+['libre ', 162380],
 ]);
 
 var options = {
@@ -70,8 +70,8 @@ var chart = new google.visualization.PieChart(document.getElementById('p3Chart')
 function drawChartP4() {
 	var data = google.visualization.arrayToDataTable([
 		  ['Usado', 'Libre'],
-['usado ', 3620],
-['libre ', 2093528],
+['usado ', 70912],
+['libre ', 2026236],
 ]);
 
 var options = {
@@ -83,7 +83,7 @@ var chart = new google.visualization.PieChart(document.getElementById('p4Chart')
 function drawChartP5() {
 	var data = google.visualization.arrayToDataTable([
 		  ['Usuario', 'Usado'],
-['andres', 4259620 ],
+['andres', 4273276 ],
 ['julio', 64 ],
 ['luis', 64 ],
 ['mayler', 84 ],
@@ -101,9 +101,9 @@ function drawChartP6() {
 
      var data = google.visualization.arrayToDataTable([
           ['etiqueta', 'valor'],
-[' cpu-usuario', 7.7],
-[' cpu-sistema', 21.7],
-[' cpu-libre', 63.2],
+[' cpu-usuario', 52.5],
+[' cpu-sistema', 12.5],
+[' cpu-libre', 28.2],
  ]);
 
         var options = {

@@ -1,8 +1,17 @@
 #!/bin/bash
 
-echo "generando html"
+HTML="index.html"
 
-./generarHtml.sh
+if [ !e $HTML ]
+then
+	echo "generando html"
+	./generarHtml
+else
+	echo "el html ya existe, continuando con las graficas"
+fi
+
+
+
 
 echo "google.charts.load('current', {'packages':['corechart','gauge']});
 google.charts.setOnLoadCallback(drawCharts);
@@ -109,9 +118,6 @@ echo "function drawChartP6() {
 top -n 1 | head -3 | tail -1  | sed s/,/./g | awk {'print "['\'' 'cpu-usuario''\'', " $2 "],"'} >>app.js
 top -n 1 | head -3 | tail -1  | sed s/,/./g | awk {'print "['\'' 'cpu-sistema''\'', " $4 "],"'} >>app.js
 top -n 1 | head -3 | tail -1  | sed s/,/./g | awk {'print "['\'' 'cpu-libre''\'', " $8 "],"'} >>app.js
-#top | head -n 3 | tail -n 1 | awk {'print "['\''" $3 "'\''," $2"],"'} >>app.js
-#top | head -n 3 | tail -n 1 | awk {'print "['\''" $5 "'\''," $4"],"'} >>app.js
-#top | head -n 3 | tail -n 1 | awk {'print "['\''" $9 "'\''," $8"],"'} >>app.js
 
 echo " ]);
 
