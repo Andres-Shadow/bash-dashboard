@@ -4,7 +4,7 @@ echo "generando html"
 
 ./generarHtml.sh
 
-echo "google.charts.load('current', {'packages':['sankey','corechart', 'bar', 'calendar']});
+echo "google.charts.load('current', {'packages':['corechart','gauge']});
 google.charts.setOnLoadCallback(drawCharts);
 function drawCharts(){
 	drawChartP1();
@@ -12,6 +12,7 @@ function drawCharts(){
 	drawChartP3();
 	drawChartP4();
 	drawChartP5();
+	drawChartP6();
 	
 }
 	function drawChartP1() {
@@ -76,7 +77,7 @@ var options = {
 var chart = new google.visualization.PieChart(document.getElementById('p4Chart'));
 	chart.draw(data,options); }" >>app.js			  
 
-echo "function drawChartP4() {
+echo "function drawChartP5() {
 	var data = google.visualization.arrayToDataTable([
 		  ['Usuario', 'Usado'],"  >> app.js
 		  
@@ -95,4 +96,38 @@ var options = {
 
 var chart = new google.visualization.PieChart(document.getElementById('p5Chart'));
 	chart.draw(data,options); }" >>app.js	
+	
+
+echo "function drawChartP6() {
+
+     var data = google.visualization.arrayToDataTable([
+          ['etiqueta', 'valor']," >>app.js
+          
+#INSTRUCCIONES
+
+#top -n 1 | head -3 | tail -1 | cut -d " " -f1,2 | sed s/,/./g | awk {'print "['\'' 'cpu''\'', " $2 "],"'} 
+top -n 1 | head -3 | tail -1  | sed s/,/./g | awk {'print "['\'' 'cpu-usuario''\'', " $2 "],"'} >>app.js
+top -n 1 | head -3 | tail -1  | sed s/,/./g | awk {'print "['\'' 'cpu-sistema''\'', " $4 "],"'} >>app.js
+top -n 1 | head -3 | tail -1  | sed s/,/./g | awk {'print "['\'' 'cpu-libre''\'', " $8 "],"'} >>app.js
+#top | head -n 3 | tail -n 1 | awk {'print "['\''" $3 "'\''," $2"],"'} >>app.js
+#top | head -n 3 | tail -n 1 | awk {'print "['\''" $5 "'\''," $4"],"'} >>app.js
+#top | head -n 3 | tail -n 1 | awk {'print "['\''" $9 "'\''," $8"],"'} >>app.js
+
+echo " ]);
+
+        var options = {
+          width: 500, height: 300,
+          redFrom: 90, redTo: 100,
+          yellowFrom:75, yellowTo: 90,
+          minorTicks: 5
+
+        };
+
+        var chart = new google.visualization.Gauge(document.getElementById('p6Chart'));
+
+        chart.draw(data, options);
+
+       
+      }" >>app.js
+
 	

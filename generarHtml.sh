@@ -16,21 +16,24 @@ echo '
 	<h1>DASHBOARD DE PC</h1> ' >>index.html
 	
 echo "
-		<div id='p1Chart' style="'"height: 500px; width: 500px;"'">
+		<div id='p1Chart' style="'"height: 500px; width: 500px; margin: 0 auto;"'">
 			
 		</div>
-		<div id='p2Chart' style="'"height: 500px; width: 500px;"'">
+		<div id='p2Chart' style="'"height: 500px; width: 500px; margin: 0 auto;"'">
 			
 		</div>
-		<div id='p3Chart' style="'"height: 500px; width: 500px;"'">
+		<div id='p3Chart' style="'"height: 500px; width: 500px; margin: 0 auto;"'">
 			
 		</div>
 
-		<div id='p4Chart' style="'"height: 500px; width: 500px;"'">
+		<div id='p4Chart' style="'"height: 500px; width: 500px; margin: 0 auto;"'">
 			
 		</div>
 		
-		<div id='p5Chart' style="'"height: 500px; width: 500px;"'">
+		<div id='p5Chart' style="'"height: 500px; width: 500px; margin: 0 auto;"'">
+			
+		</div>
+		<div id='p6Chart' style="'"height: 500px; width: 500px; margin: 0 auto;"'">
 			
 		</div>
 </body>
